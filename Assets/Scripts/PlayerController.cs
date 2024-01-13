@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Fire1") && !isJumping)
+        if((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space)) && !isJumping)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             AudioManager.instance.PlaySFX("Jump");
